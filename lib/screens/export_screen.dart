@@ -511,9 +511,7 @@ class _ExportScreenState extends State<ExportScreen> {
   }
 
   String _generateFileName(DateTime startDate, DateTime endDate) {
-    final startStr = DateFormat('yyyy_MM_dd').format(startDate);
-    final endStr = DateFormat('yyyy_MM_dd').format(endDate);
-    return 'expense_tracker_${startStr}_to_${endStr}.csv';
+    return 'expense_tracker_${DateFormat('yyyy_MM_dd').format(startDate)}_to_${DateFormat('yyyy_MM_dd').format(endDate)}.csv';
   }
 
   Future<void> _writeAndShareCSV(String csvContent, String fileName) async {
